@@ -1,25 +1,39 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
+import Crime from './Screens/crime';
+import { getCategories, getForce, getCrime } from './config/api';
 
 class App extends Component {
   render() {
+    // getCategories()
+    //   .then(res => {
+    //       console.log(res)
+    //   })
+    //   .catch(e=> {
+    //       console.log(e)
+    //   }
+    // )
+    // getForce()
+    //   .then(res => {
+    //       console.log(res)
+    //   })
+    //   .catch(e=> {
+    //       console.log(e)
+    //   }
+    // )
+    // getCrime('all-crime', 'leicestershire')
+    //   .then(res => {
+    //       console.log(res)
+    //   })
+    //   .catch(e=> {
+    //       console.log(e)
+    //   }
+    // )
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>CRIME APP</h1>
+        <Crime category={getCategories} force={getForce} crime={getCrime}/>
       </div>
     );
   }
